@@ -23,7 +23,7 @@ export function RecentOrdersTable() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch(`https://your-frontend-app.vercel.app/api/orders`)
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`)
         let data = await response.json()
 
         // Add a simulated status since it's not in the API
