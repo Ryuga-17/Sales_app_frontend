@@ -18,7 +18,7 @@ export function SalesChart() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5001/api/orders")
+        const response = await fetch(`https://your-frontend-app.vercel.app/api/orders`)
         const data = await response.json()
         setOrders(data)
 
