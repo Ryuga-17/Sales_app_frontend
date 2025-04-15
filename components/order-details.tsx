@@ -18,7 +18,7 @@ export function OrderDetails({ orderId }: { orderId: string }) {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:5001/api/orders/${orderId}`)
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/${orderId}`)
         const data = await response.json()
         setOrderDetails(data)
       } catch (error) {
