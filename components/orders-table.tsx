@@ -25,7 +25,7 @@ export function OrdersTable() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5001/api/orders")
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`)
         let data = await response.json()
 
         // Add a simulated status since it's not in the API
