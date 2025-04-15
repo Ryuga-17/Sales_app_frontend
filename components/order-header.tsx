@@ -21,7 +21,7 @@ export function OrderHeader({ orderId }: { orderId: string }) {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:5001/api/orders`)
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`)
         const orders = await response.json()
         const foundOrder = orders.find((o: Order) => o.order_id.toString() === orderId)
 
