@@ -68,7 +68,7 @@ export function CreateOrderButton() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5001/api/products")
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/products`)
         const data = await response.json()
         setProducts(data)
       } catch (error) {
@@ -115,7 +115,7 @@ export function CreateOrderButton() {
     setLoading(true)
 
     try {
-      const response = await fetch("http://localhost:5001/api/orders", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
