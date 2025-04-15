@@ -40,7 +40,7 @@ export function OrderActions({ orderId }: { orderId: string }) {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/payments", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/payments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export function OrderActions({ orderId }: { orderId: string }) {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/shipments", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/shipments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +123,7 @@ export function OrderActions({ orderId }: { orderId: string }) {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/returns", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/returns`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
