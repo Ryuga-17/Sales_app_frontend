@@ -24,11 +24,11 @@ export function DashboardCards() {
     const fetchMetrics = async () => {
       try {
         // Fetch orders
-        const ordersResponse = await fetch("http://127.0.0.1:5001/api/orders")
+        const ordersResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/orders`)
         const orders = await ordersResponse.json()
 
         // Fetch products
-        const productsResponse = await fetch("http://127.0.0.1:5001/api/products")
+        const productsResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/products`)
         const products = await productsResponse.json()
 
         // Calculate metrics
