@@ -24,7 +24,7 @@ export function ProductsTable() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`https://your-frontend-app.vercel.app/api/products`)
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/products`)
         const data = await response.json()
         setProducts(data)
       } catch (error) {
